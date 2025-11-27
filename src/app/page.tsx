@@ -25,7 +25,7 @@ export default function Home() {
       setShowAlert(true);
     } else {
       setShowAlert(false);
-      const url = `https://search.brave.com/search?q=${encodeURIComponent(trimmedQuery)}`;
+      const url = `https://www.google.com/search?q=${encodeURIComponent(trimmedQuery)}`;
       window.location.href = url;
     }
   };
