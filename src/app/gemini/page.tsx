@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Plus, Trash2, Settings, Menu, X, MessageSquare, Moon, Sun, Download, Upload, Pin, Search, ArrowUpRightIcon } from 'lucide-react';
+import { Send, Plus, Trash2, Settings, Menu, X, MessageSquare, Moon, Sun, Download, Upload, Pin, Search, ArrowUpRightIcon, ArrowUpLeftIcon, PanelRight } from 'lucide-react';
 import Link from "next/link"
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -481,6 +481,14 @@ export default function GeminiChatUI() {
       {/* Sidebar */}
       <div className={`${sidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full w-64 lg:translate-x-0 lg:w-0'} fixed lg:relative z-50 lg:z-auto h-full transition-all duration-300 bg-background lg:bg-muted/30 border-r border-border ${sidebarOpen ? 'flex flex-col' : 'lg:hidden flex flex-col'}`}>
         <div className="p-3 border-b border-border flex items-center justify-between shrink-0">
+          <Link className="text-center" href="/" >
+            <Button
+              variant="ghost"
+              size="icon"
+            >
+              <ArrowUpLeftIcon />
+            </Button>
+          </Link>
           <h2 className="font-medium text-sm">Conversas</h2>
           <Button
             variant="ghost"
@@ -714,7 +722,7 @@ export default function GeminiChatUI() {
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="h-8 w-8"
           >
-            {sidebarOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            <PanelRight />
           </Button>
         </div>
 
